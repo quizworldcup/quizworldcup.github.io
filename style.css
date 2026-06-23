@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f172a; /* Fondo oscuro y moderno */
+    color: #333;
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+    gap: 20px;
+}
+
+/* --- HEADER --- */
+header {
+    grid-area: header;
+    background: linear-gradient(135deg, #e11d48, #9f1239); /* Rojo mundialista vibrante */
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- NAV (BOTONES) --- */
+nav {
+    grid-area: nav;
+    background: #1e293b; /* Gris oscuro azulado */
+    padding: 20px 15px;
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-nav {
+    display: block;
+    background: #2563eb; /* Azul deportivo */
+    color: white;
+    padding: 14px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-nav:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* --- MAIN CONTENT --- */
+main {
+    grid-area: main;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cover-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto 25px auto;
+    border-radius: 8px;
+}
+
+main h2 {
+    color: #0f172a;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #e11d48;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+main p {
+    color: #475569;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* --- FOOTER --- */
+footer {
+    grid-area: footer;
+    background: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+        gap: 15px;
+    }
+
+    nav {
+        background: transparent;
+        padding: 0;
+    }
+
+    .nav-links {
+        flex-direction: row;
+    }
+
+    .nav-links li {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
+/* --- CÓDIGO NUEVO PARA LA GALERÍA --- */
+
+/* Fondo oscuro translúcido que cubre la pantalla */
+.overlay-galeria {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.9); /* Azul muy oscuro con opacidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Clase que activa el JavaScript */
+.overlay-galeria.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Caja contenedora de las imágenes */
+.modal-contenido {
+    background: #1e293b;
+    width: 90%;
+    max-width: 900px;
+    max-height: 85vh;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    overflow-y: auto; /* Permite scroll vertical si la pantalla es chica */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 10px;
+}
+
+/* Botón para cerrar (X) */
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-cerrar:hover {
+    color: #e11d48;
+}
+
+/* Grid de las 7 fotos */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Estilo de cada imagen */
+.grid-galeria img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Recorta la imagen para que rellene el espacio de forma uniforme */
+    border-radius: 8px;
+    border: 2px solid #334155;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.grid-galeria img:hover {
+    transform: scale(1.04);
+    border-color: #2563eb;
+}
+
+/* Ajuste específico por si la última foto queda colgada sola */
+.grid-galeria img:last-child {
+    grid-column: span 1;
+}
+
+/* Optimización para pantallas chicas */
+@media (max-width: 480px) {
+    .modal-contenido {
+        padding: 20px 15px;
+    }
+    .grid-galeria {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    .grid-galeria img {
+        height: 110px;
+    }
+}

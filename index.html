@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz World Cup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <h1>Quiz World Cup</h1>
+        </header>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" class="btn-nav">Descargar</a></li>
+                <li><a href="#" class="btn-nav" id="btn-capturas">Capturas</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <img src="cover.png" alt="Portada juego" class="cover-img">
+            <h2>Descripción</h2>
+            <p>
+                Un videojuego de trivia futbolera inspirado en Futbol Quiz League, pero adaptado a un formato de Copa del Mundo con selecciones nacionales en lugar de clubes. La idea principal es que los jugadores vivan la experiencia de competir en un “mundial de conocimiento futbolístico”, donde cada partida representa un enfrentamiento entre selecciones. El sistema incluirá preguntas sobre jugadores, mundiales, estadísticas, camisetas, momentos históricos y datos curiosos relacionados con selecciones nacionales. A medida que el usuario avance, irá superando fases típicas de un mundial —fase de grupos, octavos, cuartos, semifinal y final— generando una sensación de progreso, competencia y emoción similar a un torneo real.
+            </p>
+            <p>
+                La experiencia del usuario estará enfocada en la interacción rápida, dinámica y competitiva. Al ingresar al juego, el jugador elegirá una selección para representar y comenzará a disputar partidos de trivia contra otras selecciones. Cada “partido” se definirá respondiendo preguntas dentro de un límite de tiempo, donde las respuestas correctas sumarán goles. El diseño buscará transmitir la atmósfera de un mundial: música épica, tablas de posiciones, estadísticas en tiempo real, eliminatorias y celebraciones visuales cuando se gane un encuentro.
+            </p>
+        </main>
+        
+        <footer>
+            <p>© 2026 - Juego Quiz World Cup</p>
+        </footer>
+    </div>
+
+    <div class="overlay-galeria" id="galeriaModal">
+        <div class="modal-contenido">
+            <span class="btn-cerrar" id="btnCerrar">&times;</span>
+            <h3>Capturas del Juego</h3>
+            <div class="grid-galeria">
+                <img src="captura1.png" alt="Captura 1">
+                <img src="captura2.png" alt="Captura 2">
+                <img src="captura3.png" alt="Captura 3">
+                <img src="captura4.png" alt="Captura 4">
+                <img src="captura5.png" alt="Captura 5">
+                <img src="captura6.png" alt="Captura 6">
+                <img src="captura7.png" alt="Captura 7">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btnCapturas = document.getElementById('btn-capturas');
+        const galeriaModal = document.getElementById('galeriaModal');
+        const btnCerrar = document.getElementById('btnCerrar');
+
+        // Al hacer clic en Capturas, se muestra la galería
+        btnCapturas.addEventListener('click', (e) => {
+            e.preventDefault();
+            galeriaModal.classList.add('mostrar');
+        });
+
+        // Al hacer clic en la 'X', se oculta la galería
+        btnCerrar.addEventListener('click', () => {
+            galeriaModal.classList.remove('mostrar');
+        });
+
+        // Al hacer clic fuera de las fotos, también se cierra
+        galeriaModal.addEventListener('click', (e) => {
+            if (e.target === galeriaModal) {
+                galeriaModal.classList.remove('mostrar');
+            }
+        });
+    </script>
+</body>
+</html>
