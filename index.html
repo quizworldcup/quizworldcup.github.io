@@ -4,76 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz World Cup</title>
+
+    <meta name="description" content="El Mundial del conocimiento futbolístico. Elegí tu selección y levantá la copa.">
+
+    <link rel="icon" href="cover.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    <div class="contenedor">
-        <header>
-            <h1>Quiz World Cup</h1>
-        </header>
-        
-        <nav>
-            <ul class="nav-links">
-                <li><a href="https://www.mediafire.com/file/vcm5grcoqrl45gr/quiz_world_cup.exe/file" class="btn-nav">Descargar</a></li>
-                <li><a href="#" class="btn-nav" id="btn-capturas">Capturas</a></li>
-            </ul>
-        </nav>
-        
-        <main>
-            <img src="cover.png" alt="Portada juego" class="cover-img">
-            <h2>Descripción</h2>
-            <p>
-                Un videojuego de trivia futbolera inspirado en Futbol Quiz League, pero adaptado a un formato de Copa del Mundo con selecciones nacionales en lugar de clubes. La idea principal es que los jugadores vivan la experiencia de competir en un “mundial de conocimiento futbolístico”, donde cada partida representa un enfrentamiento entre selecciones. El sistema incluirá preguntas sobre jugadores, mundiales, estadísticas, camisetas, momentos históricos y datos curiosos relacionados con selecciones nacionales. A medida que el usuario avance, irá superando fases típicas de un mundial —fase de grupos, octavos, cuartos, semifinal y final— generando una sensación de progreso, competencia y emoción similar a un torneo real.
-            </p>
-            <p>
-                La experiencia del usuario estará enfocada en la interacción rápida, dinámica y competitiva. Al ingresar al juego, el jugador elegirá una selección para representar y comenzará a disputar partidos de trivia contra otras selecciones. Cada “partido” se definirá respondiendo preguntas dentro de un límite de tiempo, donde las respuestas correctas sumarán goles. El diseño buscará transmitir la atmósfera de un mundial: música épica, tablas de posiciones, estadísticas en tiempo real, eliminatorias y celebraciones visuales cuando se gane un encuentro.
-            </p>
-        </main>
-        
-        <footer>
-            <p>© 2026 - Juego Quiz World Cup</p>
-        </footer>
-    </div>
 
-    <div class="overlay-galeria" id="galeriaModal">
-        <div class="modal-contenido">
-            <span class="btn-cerrar" id="btnCerrar">&times;</span>
-            <h3>Capturas del Juego</h3>
-            <div class="grid-galeria">
-                <img src="captura1.png" alt="Captura 1">
-                <img src="captura2.png" alt="Captura 2">
-                <img src="captura3.png" alt="Captura 3">
-                <img src="captura4.png" alt="Captura 4">
-                <img src="captura5.png" alt="Captura 5">
-                <img src="captura6.png" alt="Captura 6">
-                <img src="captura7.png" alt="Captura 7">
+    <header class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <nav class="navbar">
+            <div class="logo">
+                🏆 Quiz World Cup
             </div>
+
+            <a href="https://www.mediafire.com/file/vcm5grcoqrl45gr/quiz_world_cup.exe/file"
+               class="download-btn">
+                Descargar
+            </a>
+        </nav>
+
+        <div class="hero-content">
+
+            <img src="cover.png" class="hero-cover">
+
+            <span class="badge">
+                ⚽ Trivia Futbolera
+            </span>
+
+            <h1>QUIZ WORLD CUP</h1>
+
+            <p>
+                Elegí tu selección, respondé preguntas y conquistá el Mundial del conocimiento futbolístico.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="https://www.mediafire.com/file/vcm5grcoqrl45gr/quiz_world_cup.exe/file"
+                   class="btn-primary">
+                    Descargar Ahora
+                </a>
+
+                <a href="#capturas"
+                   class="btn-secondary">
+                    Ver Capturas
+                </a>
+            </div>
+
         </div>
+
+    </header>
+
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <h2>48</h2>
+            <p>Selecciones</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>+100</h2>
+            <p>Preguntas</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>6</h2>
+            <p>Fases</p>
+        </div>
+
+    </section>
+
+
+    <section class="descripcion">
+
+        <h2>¿Qué es Quiz World Cup?</h2>
+
+        <p>
+            Un videojuego de trivia futbolera inspirado en los grandes torneos internacionales.
+            Elegí una selección nacional y avanzá desde la fase de grupos hasta la gran final.
+        </p>
+
+        <p>
+            Cada respuesta correcta es un gol. Cada partido puede acercarte al sueño de levantar la copa.
+        </p>
+
+    </section>
+
+
+    <section class="features">
+
+        <h2>Características</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <span>⚽</span>
+                <h3>Elegí tu Selección</h3>
+                <p>Representá a tu país favorito.</p>
+            </div>
+
+            <div class="feature-card">
+                <span>⏱️</span>
+                <h3>Contrarreloj</h3>
+                <p>Respondé antes de que se termine el tiempo.</p>
+            </div>
+
+            <div class="feature-card">
+                <span>🏆</span>
+                <h3>Ganá la Copa</h3>
+                <p>Superá todas las fases del torneo.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="fases">
+
+        <h2>Camino hacia la Gloria</h2>
+
+        <div class="timeline">
+
+            <div class="step">Grupos</div>
+            <div class="step">16avos</div>
+            <div class="step">Octavos</div>
+            <div class="step">Cuartos</div>
+            <div class="step">Semifinal</div>
+            <div class="step final">🏆 Final</div>
+
+        </div>
+
+    </section>
+
+
+    <section id="capturas" class="capturas">
+
+        <h2>Capturas del Juego</h2>
+
+        <div class="gallery">
+
+            <img src="captura1.png" alt="">
+            <img src="captura2.png" alt="">
+            <img src="captura3.png" alt="">
+            <img src="captura4.png" alt="">
+            <img src="captura5.png" alt="">
+            <img src="captura6.png" alt="">
+            <img src="captura7.png" alt="">
+
+        </div>
+
+    </section>
+
+    <div class="image-modal" id="imageModal">
+
+        <span id="closeModal">&times;</span>
+
+        <img id="modalImage">
+
     </div>
 
-    <script>
-        const btnCapturas = document.getElementById('btn-capturas');
-        const galeriaModal = document.getElementById('galeriaModal');
-        const btnCerrar = document.getElementById('btnCerrar');
 
-        // Al hacer clic en Capturas, se muestra la galería
-        btnCapturas.addEventListener('click', (e) => {
-            e.preventDefault();
-            galeriaModal.classList.add('mostrar');
+    <section class="download-section">
+
+        <h2>¿Estás listo para el desafío?</h2>
+
+        <a href="https://www.mediafire.com/file/vcm5grcoqrl45gr/quiz_world_cup.exe/file"
+           class="download-big">
+            Descargar Quiz World Cup
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        <p>© 2026 - Quiz World Cup</p>
+
+    </footer>
+<script>
+
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeModal = document.getElementById("closeModal");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+
+        img.addEventListener("click", () => {
+            modal.style.display = "flex";
+            modalImg.src = img.src;
         });
 
-        // Al hacer clic en la 'X', se oculta la galería
-        btnCerrar.addEventListener('click', () => {
-            galeriaModal.classList.remove('mostrar');
-        }); 
+    });
 
-        // Al hacer clic fuera de las fotos, también se cierra
-        galeriaModal.addEventListener('click', (e) => {
-            if (e.target === galeriaModal) {
-                galeriaModal.classList.remove('mostrar');
-            }
-        });
-    </script>
+    closeModal.onclick = () => {
+        modal.style.display = "none";
+    };
+
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            modal.style.display = "none";
+        }
+    });
+
+</script>
 </body>
 </html>
